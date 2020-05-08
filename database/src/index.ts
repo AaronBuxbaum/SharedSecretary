@@ -1,7 +1,7 @@
-import "reflect-metadata";
-import { createConnection } from "typeorm";
-import { User } from "./entity/User";
-import { ApolloServer, gql, IResolvers } from "apollo-server";
+import { ApolloServer, gql, IResolvers } from 'apollo-server';
+import 'reflect-metadata';
+import { createConnection } from 'typeorm';
+import { User } from './entity/User';
 
 const typeDefs = gql`
   type Query {
@@ -23,6 +23,7 @@ async function main() {
     context: { connection },
   });
   const url = await server.listen(4000);
+  // eslint-disable-next-line no-console
   console.log(`🚀  Server ready at ${url}`);
 }
 
