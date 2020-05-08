@@ -2,7 +2,8 @@
   "name": "database",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src"
+    "start": "ts-node src",
+    "typecheck": "yarn tsc --noEmit"
   },
   "dependencies": {
     "apollo-server": "^2.13.0",
@@ -24,7 +25,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn typecheck"
     }
   },
   "lint-staged": {
