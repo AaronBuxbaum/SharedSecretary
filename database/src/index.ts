@@ -22,7 +22,7 @@ async function main() {
     resolvers,
     context: { connection },
   });
-  const url = await server.listen(4000);
+  const { url } = await server.listen(4000);
   // eslint-disable-next-line no-console
   console.log(`🚀  Server ready at ${url}`);
 }

@@ -2,7 +2,7 @@
   "name": "database",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src",
+    "start": "ts-node-dev --respawn --transpile-only src",
     "typecheck": "yarn tsc --noEmit"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
     "ts-node": "^8.10.1",
+    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
   },
   "husky": {

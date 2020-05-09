@@ -1,0 +1,27 @@
+version: '3'
+
+volumes:
+  postgres:
+
+services:
+  database:
+    image: postgres
+    env_file:
+      - database/.env
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+  server:
+    image: node:13
+    env_file:
+      - database/.env
+    working_dir: /app
+    command: yarn start
+    ports:
+      - 4000:4000
+    volumes:
+      - ./database:/app
+    depends_on:
+      - database
